@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Observable} from "rxjs";
-import {resolve} from "@angular/compiler-cli/src/ngtsc/file_system";
+
 
 @Component({
   selector: 'app-root',
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit{
   }
 
   forbiddenNameChecker(control: FormControl): {[s: string]: boolean} {
-    if (this.forbiddenName.indexOf(control.value) !== -1) {
+    if ((control.value) === 'Test') {
       return {'nameIsForbidden': true}
     }
     return null;
